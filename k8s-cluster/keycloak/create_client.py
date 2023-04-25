@@ -41,3 +41,5 @@ def create_client():
     x = requests.post(url, headers=headers, json=params)
     print(x)
     return x.content
+
+create_client()
