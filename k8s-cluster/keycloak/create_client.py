@@ -11,7 +11,7 @@ def get_token():
         'client_id': 'admin-cli',
         'grant_type': 'password',
         'username' : 'admin',
-        'password': 'password'
+        'password': 'admin'
     }
     x = requests.post(url, params, verify=False).content.decode('utf-8')
     print (x)
