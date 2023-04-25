@@ -21,7 +21,7 @@ def get_token():
 
 
 def create_client():
-    url = 'http://217.28.220.13:32668/auth/admin/realms/master/clients'
+    url = 'http://217.28.220.13:32668/realms/master/clients-registrations/default'
 
     headers = {
         'content-type': 'application/json',
