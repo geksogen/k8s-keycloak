@@ -19,4 +19,25 @@ def get_token():
     return ast.literal_eval(x)['access_token']
     #return requests.post(url, params, verify=False).content.decode('utf-8')
 
-get_token()
+
+def create_client():
+    url = 'http://217.28.220.13:32668/auth/admin/realms/master/clients'
+
+    headers = {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + str(get_token())
+    }
+
+    params = {
+        "clientId": "testclient",
+        "id": "1",
+        "name": "testclient-1",
+        "description": "TESTCLIENT-1",
+        "enabled": True,
+        "redirectUris": ["\\"],
+        "publicClient": True
+
+    }
+    x = requests.post(url, headers=headers, json=params)
+    print(x)
+    return x.content
