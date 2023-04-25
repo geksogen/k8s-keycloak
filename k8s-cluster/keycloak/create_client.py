@@ -18,3 +18,5 @@ def get_token():
     print ('\n')
     return ast.literal_eval(x)['access_token']
     #return requests.post(url, params, verify=False).content.decode('utf-8')
+
+get_token()
